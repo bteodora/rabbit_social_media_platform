@@ -19,7 +19,7 @@
   </p>
 
   <p>
-    <a href="Specifikacija_projekta.pdf"><strong>📄 View System Specification Document (PDF) »</strong></a>
+    <a href="Specifikacija projekta ISA 2024.pdf"><strong>📄 View System Specification Document (PDF) »</strong></a>
   </p>
 </div>
 
@@ -155,7 +155,7 @@ The technology choices reflect a commitment to stability, strong typing, and ent
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/bteodora/rabbit_social_media_platform.git
+    git clone https://github.com/bteodora/rabbi-social-media-platform.git
     cd onlybuns-platform
     ```
 
