@@ -36,8 +36,6 @@
 7. [Configuration and Infrastructure Switching](#configuration-and-infrastructure-switching)
 8. [Performance and Concurrency](#performance-and-concurrency)
 9. [Monitoring and Observability](#monitoring-and-observability)
-10. [Roadmap](#roadmap)
-11. [License](#license)
 
 ---
 
