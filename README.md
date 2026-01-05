@@ -1,26 +1,26 @@
 <div align="center">
-  <img src="frontend/RabbitApp/public/bunny.svg" alt="OnlyBuns Platform Logo" width="150"/>
-  
-  <br><br>
-
-  <h1>OnlyBuns Enterprise Social Platform</h1>
-  <h3>Distributed Content Management and Social Interaction System for Lagomorph Enthusiasts</h3>
-
-  <p>
-    <img src="https://img.shields.io/badge/Backend-Java_Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Boot"/>
-    <img src="https://img.shields.io/badge/Frontend-Angular_16+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
-    <img src="https://img.shields.io/badge/Database-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-    <img src="https://img.shields.io/badge/Architecture-Service_Oriented-orange?style=for-the-badge" alt="SOA"/>
-    <img src="https://img.shields.io/badge/Status-Production_Ready-red?style=for-the-badge" alt="Status"/>
-  </p>
-
-  <p>
-    <strong>A high-concurrency, scalable web architecture engineered to facilitate digital community engagement, geospatial tracking, and real-time communication. Features custom-built infrastructure components including a proprietary Load Balancer, a configurable Dual-Mode Message Queue system, and bespoke Rate Limiting algorithms.</strong>
-  </p>
-
-  <p>
-    <a href="Specifikacija projekta ISA 2024.pdf"><strong>📄 View System Specification Document (PDF) »</strong></a>
-  </p>
+<img src="frontend/RabbitApp/public/bunny.svg" alt="OnlyBuns Platform Logo" width="150"/>
+<br><br>
+<h1 style="font-family: 'Segoe UI', sans-serif; letter-spacing: 2px; text-transform: uppercase;">OnlyBuns Distributed Core</h1>
+<h3 style="color: #555;">High-Concurrency Social Infrastructure & Custom Middleware</h3>
+<p>
+<img src="https://img.shields.io/badge/Backend-Java_Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Boot"/>
+<img src="https://img.shields.io/badge/Frontend-Angular_16+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
+<img src="https://img.shields.io/badge/Middleware-Custom_Load_Balancer-0052CC?style=for-the-badge&logo=nginx&logoColor=white" alt="Load Balancer"/>
+<img src="https://img.shields.io/badge/Messaging-Proprietary_Queue-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="Message Queue"/>
+<img src="https://img.shields.io/badge/Architecture-Service_Oriented-orange?style=for-the-badge" alt="SOA"/>
+</p>
+<p align="center" style="max-width: 800px; margin: auto;">
+<strong>A rigorous proof-of-concept for complex distributed systems architectures.
+Features custom-engineered infrastructure components including a proprietary Load Balancer, a configurable Dual-Mode Message Queue system, and bespoke Rate Limiting algorithms, protecting a geospatial social network.</strong>
+</p>
+<p>
+<a href="Specifikacija projekta ISA 2024.pdf"><strong>📄 Engineering Specification (PDF) »</strong></a>
+·
+<a href="#architectural-diagram"><strong>🏛 System Architecture »</strong></a>
+·
+<a href="#key-architectural-highlights"><strong>⚙️ Proprietary Components »</strong></a>
+</p>
 </div>
 
 ---
@@ -38,6 +38,31 @@
 9. [Monitoring and Observability](#monitoring-and-observability)
 
 ---
+
+## Architectural Diagram
+The system relies on a bespoke "Edge Layer" to handle traffic before it reaches the core business logic.
+
+```mermaid
+graph TD;
+    Client[Angular Client] -->|HTTP/REST| RateLimiter[Custom Rate Limiter];
+    
+    subgraph "Proprietary Infrastructure Layer"
+        RateLimiter --> LoadBalancer[Custom Load Balancer];
+        LoadBalancer -->|Strategy: Round Robin| Instance1[Spring Boot Node 1];
+        LoadBalancer -->|Strategy: Least Conn| Instance2[Spring Boot Node 2];
+    end
+
+    subgraph "Messaging Infrastructure (Dual-Mode)"
+        Instance1 -->|Interface: IMessageQueue| MQ_Switch{Profile Switch};
+        MQ_Switch -->|Profile: 'custom'| CustomMQ[Proprietary In-Memory Queue];
+        MQ_Switch -->|Profile: 'rabbitmq'| RabbitMQ[RabbitMQ Broker];
+        CustomMQ -->|Fanout| AdService[External Ad Service];
+        CustomMQ -->|Direct| VetService[Vet Location Service];
+    end
+
+    Instance1 --> Database[(PostgreSQL)];
+    Instance2 --> Database;
+```
 
 ## Project Overview
 
