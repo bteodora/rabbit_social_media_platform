@@ -1,7 +1,7 @@
 <div align="center">
-<img src="frontend/RabbitApp/public/bunny.svg" alt="OnlyBuns Platform Logo" width="150"/>
+<img src="frontend/RabbitApp/public/bunny.svg" alt="Rabbit Social Media Platform Logo" width="150"/>
 <br><br>
-<h1 style="font-family: 'Segoe UI', sans-serif; letter-spacing: 2px; text-transform: uppercase;">OnlyBuns Distributed Core</h1>
+<h1 style="font-family: 'Segoe UI', sans-serif; letter-spacing: 2px; text-transform: uppercase;">Rabbit Social Media Distributed Core</h1>
 <h3 style="color: #555;">High-Concurrency Social Infrastructure & Custom Middleware</h3>
 <p>
 <img src="https://img.shields.io/badge/Backend-Java_Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Boot"/>
@@ -66,7 +66,7 @@ graph TD;
 
 ## Project Overview
 
-**OnlyBuns** is a sophisticated social networking solution designed to address specific market gaps in the pet ownership community. While outwardly presented as a niche platform for rabbit enthusiasts, the underlying system acts as a rigorous proof-of-concept for complex distributed systems architectures.
+This is a sophisticated social networking solution designed to address specific market gaps in the pet ownership community. While outwardly presented as a niche platform for rabbit enthusiasts, the underlying system acts as a rigorous proof-of-concept for complex distributed systems architectures.
 
 The platform provides a comprehensive ecosystem where users can curate digital identities, publish geo-tagged content, engage in real-time communication, and interact with external service providers (veterinarians, shelters). It solves the problem of fragmented information in the lagomorph care sector by unifying social interaction, care resource discovery, and multimedia sharing into a single, cohesive, and resilient application.
 
@@ -178,8 +178,8 @@ The technology choices reflect a commitment to stability, strong typing, and ent
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/bteodora/rabbi-social-media-platform.git
-    cd onlybuns-platform
+    git clone https://github.com/bteodora/rabbit-social-media-platform.git
+    cd rabbit-social-platform
     ```
 
 2.  **Database Configuration**
